@@ -9,8 +9,8 @@ This guide takes the game from a placeholder page to a fully deployed
 
 | File              | Purpose                                                          |
 | ----------------- | ---------------------------------------------------------------- |
-| `index.html`      | GitHub Pages landing page. Loads Socket.IO from CDN, defines `window.SERVER_URL`, then loads `public/js/client.js`. |
-| `public/js/`      | Home of your main frontend JavaScript file (`client.js`).        |
+| `index.html`      | GitHub Pages landing page. Loads Socket.IO from CDN, defines `window.SERVER_URL`, then loads `client.js` (repo root). |
+| `client.js`       | Main frontend JavaScript file — lives in the repo root next to `index.html` so GitHub Pages serves both. |
 | `render.yaml`     | Render Blueprint → deploys the backend automatically.            |
 | `server/index.js` | Express + Socket.IO server. Already uses `process.env.PORT` and allows CORS `*`. |
 
@@ -18,8 +18,9 @@ This guide takes the game from a placeholder page to a fully deployed
 
 ## Step 1 — Put your frontend JS in place
 
-Your frontend JS needs to live at **`public/js/client.js`** (or another name —
-just update the `<script src="...">` tag in `index.html` to match).
+The frontend JS lives at **`client.js`** in the repo root, right next to
+`index.html` (GitHub Pages serves the repo root, so it can load both). It's
+already wired up via `<script src="client.js">`.
 
 The one thing it must change: **how it connects the socket.**
 
