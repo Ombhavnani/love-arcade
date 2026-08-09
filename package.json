@@ -1,0 +1,21 @@
+{
+  "name": "love-arcade",
+  "version": "1.0.0",
+  "description": "Love Arcade: Long Distance Edition — a cooperative 2-player relationship game hosted by an AI Game Master, with real-time lobby play over a join code.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "test": "node smoke-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}
