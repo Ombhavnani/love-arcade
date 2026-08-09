@@ -1,0 +1,19 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+#
+# Deploys the Node.js / Socket.IO backend automatically.
+# Usage: push this file to GitHub, then in Render:
+#   New → Blueprint → select the love-arcade repo → Apply.
+# (The repo field is filled in automatically by Render — no need to add it here.)
+services:
+  - type: web
+    name: love-arcade
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.4

@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Arcade</title>
+    <title>Love Arcade — Long Distance Edition</title>
 </head>
 <body>
-    <h1>Welcome to Love Arcade!</h1>
-    <p>This is a placeholder page for the game.</p>
+    <main id="app">
+        <h1>❤️ Love Arcade</h1>
+        <p>Loading…</p>
+    </main>
+
+    <!--
+      Socket.IO client from CDN.
+      Required because GitHub Pages is a static host and cannot serve the
+      server's /socket.io/socket.io.js the way the Express backend does.
+    -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <!--
+      🚀 LIVE BACKEND URL — swap this value once your Render service is live.
+      Example:
+          window.SERVER_URL = 'https://love-arcade.onrender.com';
+      Your game frontend (public/js/client.js) should connect with:
+          const socket = io(window.SERVER_URL);
+    -->
+    <script>
+        window.SERVER_URL = 'http://localhost:3000'; // TODO: replace with your Render backend URL
+    </script>
+
+    <!-- Main game frontend -->
+    <script src="public/js/client.js"></script>
 </body>
 </html>
